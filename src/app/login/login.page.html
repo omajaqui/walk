@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="master">
+    <ion-title class="center">
+      <ion-icon name="key" icon-end></ion-icon>
+      Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content class="ion-padding">
+        <form class="form" [formGroup]="loginForm" >
+          <ion-list>
+            <ion-item>
+              <ion-icon color="master" name="person" item-start></ion-icon>
+              <ion-input type="text" formControlName="userName" placeholder="Usuario"></ion-input>
+            </ion-item>
+              <!-- <div *ngIf="loginForm.get('userName').errors && loginForm.get('userName').dirty">
+                  <div *ngIf="loginForm.get('userName').hasError('pattern')">{{toast}}</div> 
+                <p color='danger' ion-text *ngIf="loginForm.get('userName').hasError('pattern')">
+                  Solo letras o números, minimo 4, máximo 20 Caracteres.
+                </p>
+              </div> -->
+            <ion-item>
+                <ion-icon color="master" name="unlock" item-start></ion-icon>
+                <ion-input type="password" formControlName="pass" placeholder="Contraseña"></ion-input>
+            </ion-item>
+              <!-- <div *ngIf="loginForm.get('pass').errors && loginForm.get('pass').dirty">
+                <p style="color:red;" ion-text *ngIf="loginForm.get('pass').hasError('pattern')">
+                  Solo letras o números, minimo 8 máximo 20 Caracteres.
+                </p>
+              </div> -->
+          </ion-list>
+            <div class="center">            
+              <ion-button                               
+                color="master"
+                (click)="validLogin()"
+                [disabled]="!loginForm.valid"
+               >Ingresar</ion-button>
+            </div>                         
+          </form>
+    </ion-card-content>
+    <div class="center ion-padding">      
+      <a ion-button block clear color="grey" style="text-transform: none;"  (click)="recoveryPass()">
+        Olvide Mi Contraseña
+      </a>
+    </div>  
+  </ion-card>  
+</ion-content>

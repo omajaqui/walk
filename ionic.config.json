@@ -1,5 +1,7 @@
 {
   "name": "walk",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

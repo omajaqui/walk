@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Nuva Visita</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+  <p *ngIf="username!==undefined">Username valido en aplicación</p>
+  <div *ngIf="username==undefined">
+    <p>No ha iniciado sesion, intente de nuevo</p>
+  </div>  
+</ion-content>
